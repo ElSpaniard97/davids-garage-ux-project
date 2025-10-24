@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>David's Garage – Rockdale, TX | UX Case Study + Landing</title>
+  <meta name="description" content="UX design showcase for David's Garage in Rockdale, Texas — light rustic tones, clean modern layout, and automotive imagery." />
+  <style>
+    :root{
+      --bg:#f8f8f5;
+      --olive:#c2c5aa;
+      --light-olive:#e9edc9;
+      --gray:#adb5bd;
+      --accent:#6c757d;
+      --white:#ffffff;
+      --radius:14px;
+      --shadow:0 6px 15px rgba(0,0,0,0.1);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:"Inter", system-ui, sans-serif;
+      background:var(--bg);
+      color:#2d2d2d;
+      line-height:1.6;
+    }
+    header{
+      position:sticky;top:0;z-index:10;background-color:var(--white);
+      border-bottom:2px solid var(--olive);
+      box-shadow:0 3px 8px rgba(0,0,0,0.05);
+    }
+    .nav{display:flex;align-items:center;justify-content:space-between;padding:1rem 2rem;}
+    .brand{display:flex;align-items:center;gap:12px;}
+    .brand-logo{
+      width:50px;height:50px;border-radius:8px;background:url('https://cdn.pixabay.com/photo/2017/06/18/17/32/vintage-car-2414849_1280.jpg') center/cover;
+      border:2px solid var(--gray);box-shadow:var(--shadow);
+    }
+    .brand-text{font-size:1.6rem;font-weight:700;letter-spacing:1px;color:#343a40;}
+    nav ul{list-style:none;display:flex;gap:1rem;}
+    nav button{
+      background:none;color:#343a40;border:1px solid var(--gray);border-radius:var(--radius);
+      padding:0.5rem 1rem;font-weight:600;cursor:pointer;transition:all 0.3s ease;
+    }
+    nav button:hover,nav button[aria-selected="true"]{
+      background-color:var(--olive);color:#1a1a1a;border-color:var(--accent);
+    }
+    .container{max-width:1200px;margin:0 auto;padding:2rem;}
+    .hero{display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:center;}
+    .card{
+      background:var(--white);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
+      padding:2rem;
+      border:1px solid rgba(0,0,0,0.05);
+    }
+    h1,h2,h3{color:#3c3d37;font-family:'Segoe UI',sans-serif;}
+    .lead{color:#4e4f4a;font-size:1.1rem;}
+    .btn{
+      display:inline-block;margin-top:1rem;padding:0.8rem 1.2rem;border-radius:var(--radius);
+      border:none;font-weight:600;cursor:pointer;transition:0.3s ease;
+    }
+    .btn.primary{background-color:var(--olive);color:#1b1b1b;}
+    .btn.primary:hover{background-color:#d6d6b1;}
+    .btn.secondary{background-color:transparent;color:#3a3a3a;border:1px solid var(--gray);}
+    .btn.secondary:hover{background-color:var(--gray);color:white;}
+    .section{margin-top:2rem;}
+    .grid{display:grid;gap:1.5rem;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));}
+    .tile{
+      background:var(--light-olive);
+      padding:1.5rem;border-radius:var(--radius);border:1px solid rgba(0,0,0,0.05);
+      transition:transform 0.3s ease,box-shadow 0.3s ease;
+    }
+    .tile:hover{transform:translateY(-5px);box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+    .tile img{width:100%;border-radius:var(--radius);margin-bottom:1rem;}
+    footer{background-color:var(--light-olive);border-top:2px solid var(--gray);padding:1.5rem;text-align:center;color:#555;}
+    .tabpanels{margin-top:1.5rem;}
+    .tabpanel{display:none;}
+    .tabpanel[aria-hidden="false"]{display:block;}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="brand">
+        <div class="brand-logo" aria-hidden="true"></div>
+        <div class="brand-text">David's Garage</div>
+      </div>
+      <nav>
+        <ul class="tabs" role="tablist">
+          <li><button role="tab" id="tab-customer" aria-controls="panel-customer" aria-selected="true">Customer Site</button></li>
+          <li><button role="tab" id="tab-case" aria-controls="panel-case" aria-selected="false">UX Case Study</button></li>
+          <li><button role="tab" id="tab-style" aria-controls="panel-style" aria-selected="false">Style Guide</button></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="panel-customer" class="tabpanels">
+      <div class="tabpanel" role="tabpanel" aria-labelledby="tab-customer" aria-hidden="false">
+        <div class="hero">
+          <div class="card">
+            <h1>Reliable Auto Service in Rockdale</h1>
+            <p class="lead">From classic restorations to modern diagnostics — David’s Garage delivers honest work with a small‑town heart.</p>
+            <button class="btn primary">Book Now</button>
+            <button class="btn secondary">Our Services</button>
+          </div>
+          <div class="card">
+            <img src="https://cdn.pixabay.com/photo/2016/12/27/22/25/vw-beetle-1937783_1280.jpg" alt="Classic car outside the garage" style="width:100%;border-radius:10px;margin-bottom:1rem;"/>
+            <h2>Today's Hours</h2>
+            <p>Mon–Fri: 8 AM–6 PM<br>Sat: 9 AM–2 PM<br>Sun: Closed</p>
+          </div>
+        </div>
+        <section class="section">
+          <h2>Popular Services</h2>
+          <div class="grid">
+            <div class="tile"><img src="https://cdn.pixabay.com/photo/2016/11/19/15/38/auto-repair-1836930_1280.jpg" alt="Oil change service"><h3>Oil Change</h3><p>Top‑quality oil and filters to keep your engine running smoothly.</p></div>
+            <div class="tile"><img src="https://cdn.pixabay.com/photo/2016/12/06/18/27/brake-1880940_1280.jpg" alt="Brake repair"><h3>Brake Repair</h3><p>Complete inspection, pad replacement, and precision testing.</p></div>
+            <div class="tile"><img src="https://cdn.pixabay.com/photo/2016/02/19/10/00/car-repair-1209901_1280.jpg" alt="Mechanic diagnostics"><h3>Diagnostics</h3><p>Modern equipment with clear, trustworthy communication.</p></div>
+          </div>
+        </section>
+      </div>
+    </section>
+
+    <section id="panel-case" class="tabpanels">
+      <div class="tabpanel" role="tabpanel" aria-labelledby="tab-case" aria-hidden="true">
+        <div class="card"><h2>UX Case Study</h2><p class="lead">Reimagining a garage website with approachable, rustic design and high usability. Focus: clarity, speed, and local personality.</p></div>
+      </div>
+    </section>
+
+    <section id="panel-style" class="tabpanels">
+      <div class="tabpanel" role="tabpanel" aria-labelledby="tab-style" aria-hidden="true">
+        <div class="card"><h2>Style Guide</h2><p class="lead">Soft olive tones, light grays, and clean whites combine to create a bright and approachable atmosphere that mirrors the trust of a small‑town garage.</p></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>© <span id="year"></span> David's Garage — UX concept by Ezekiel Correa</small>
+  </footer>
+  <script>
+    const tabs=document.querySelectorAll('[role="tab"]');
+    const panels=document.querySelectorAll('.tabpanel');
+    tabs.forEach(tab=>{
+      tab.addEventListener('click',()=>{
+        tabs.forEach(t=>t.setAttribute('aria-selected','false'));
+        panels.forEach(p=>p.setAttribute('aria-hidden','true'));
+        tab.setAttribute('aria-selected','true');
+        document.getElementById(tab.getAttribute('aria-controls')).querySelector('.tabpanel').setAttribute('aria-hidden','false');
+      });
+    });
+    document.getElementById('year').textContent=new Date().getFullYear();
+  </script>
+</body>
+</html>
